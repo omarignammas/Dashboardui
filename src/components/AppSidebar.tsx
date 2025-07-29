@@ -1,10 +1,11 @@
-import { Calendar, ChevronUp, Home, Inbox, LogOut, Plus, PlusCircle, Projector, Search, Settings, Settings2, User2 } from "lucide-react"
+import { Calendar, ChevronDown, ChevronUp, Home, Inbox, LogOut, Plus, PlusCircle, Projector, Search, Settings, Settings2, User2 } from "lucide-react"
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSubItem, SidebarSeparator } from "./ui/sidebar";
 import Link from "next/link";
 import Image from "next/image";
 import logo from '../assets/logo.png'
 import { DropdownMenu, DropdownMenuContent } from "@radix-ui/react-dropdown-menu";
 import { DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./ui/collapsible";
 
 // Menu items.
 const items = [
@@ -103,8 +104,50 @@ const AppSidebar = () => {
                     </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+        <Collapsible defaultOpen className="group/collapsible">
+        <SidebarGroup>
+          <SidebarGroupLabel asChild>
+
+          <CollapsibleTrigger>
+             Colapsable Groupe
+            <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+          </CollapsibleTrigger>
+
+          </SidebarGroupLabel>
+           
+          <CollapsibleContent>
+         
+          <SidebarGroupContent>
+                    <SidebarMenu>
+                        <SidebarMenuItem>
+                            <SidebarMenuButton asChild>
+
+                                <Link href="/">
+                                    <Projector/>
+                                    See All Projects
+                                </Link>
+
+                            </SidebarMenuButton>
+                            
+                        </SidebarMenuItem>
+                        <SidebarMenuItem>
+                            <SidebarMenuButton asChild>
+
+                                <Link href="/">
+                                    <PlusCircle/>
+                                    Add Project
+                                </Link>
+
+                            </SidebarMenuButton>
+                        </SidebarMenuItem>
+                    </SidebarMenu>
+          </SidebarGroupContent>
+          </CollapsibleContent>
+        </SidebarGroup>
+        </Collapsible>
       </SidebarContent>
           </SidebarGroup>
+          
         </SidebarContent>
         <SidebarSeparator/>
         <SidebarFooter>
