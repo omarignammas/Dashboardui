@@ -5,6 +5,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
 import { useTheme } from "next-themes";
+import Link from "next/link";
+import { SidebarTrigger } from "./ui/sidebar";
 
 const Navbar = () => {
 
@@ -12,10 +14,10 @@ const Navbar = () => {
 
     return(
         <nav className="flex items-center justify-between py-4 mr-8">
-            CollapsButton
+            <SidebarTrigger className="ml-2"/>
 
             <div className="flex items-center gap-4">
-                Dashboard
+               <Link href="/">Dashboard</Link> 
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                         <Button variant="outline" size="icon">
@@ -43,7 +45,7 @@ const Navbar = () => {
                             <AvatarFallback>CN</AvatarFallback>
                         </Avatar>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent sideOffset={10} className="mr-2">
+                    <DropdownMenuContent sideOffset={12} className="mr-2">
                         <DropdownMenuLabel>My Account</DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem>

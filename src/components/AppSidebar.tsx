@@ -1,5 +1,5 @@
-import { Calendar, ChevronUp, Home, Inbox, LogOut, Search, Settings, Settings2, User2 } from "lucide-react"
-import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "./ui/sidebar";
+import { Calendar, ChevronUp, Home, Inbox, LogOut, Plus, PlusCircle, Projector, Search, Settings, Settings2, User2 } from "lucide-react"
+import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSubItem, SidebarSeparator } from "./ui/sidebar";
 import Link from "next/link";
 import Image from "next/image";
 import logo from '../assets/logo.png'
@@ -40,19 +40,20 @@ const items = [
 const AppSidebar = () => {
 
     return(
-        <Sidebar>
+        <Sidebar collapsible="icon">
             <SidebarHeader>
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
                             <Link href="/">
-                            <Image src={logo} alt="logo" width={50}  height={50} />
+                            <Image src={logo} alt="logo" width={50}  height={40} />
                             <span className="-ml-2">Multazim Dash</span>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                 </SidebarMenu>
             </SidebarHeader>
+            <SidebarSeparator/>
         <SidebarContent>
           <SidebarGroup>
             <SidebarGroupLabel>Application</SidebarGroupLabel>
@@ -70,8 +71,42 @@ const AppSidebar = () => {
                 ))}
               </SidebarMenu>
             </SidebarGroupContent>
+            <SidebarContent>
+        <SidebarGroup>
+          <SidebarGroupLabel>Projects</SidebarGroupLabel>
+          <SidebarGroupAction>
+            <Plus /> <span className="sr-only">Add Project</span>
+          </SidebarGroupAction>
+          <SidebarGroupContent>
+                    <SidebarMenu>
+                        <SidebarMenuItem>
+                            <SidebarMenuButton asChild>
+
+                                <Link href="/">
+                                    <Projector/>
+                                    See All Projects
+                                </Link>
+
+                            </SidebarMenuButton>
+                            
+                        </SidebarMenuItem>
+                        <SidebarMenuItem>
+                            <SidebarMenuButton asChild>
+
+                                <Link href="/">
+                                    <PlusCircle/>
+                                    Add Project
+                                </Link>
+
+                            </SidebarMenuButton>
+                        </SidebarMenuItem>
+                    </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
           </SidebarGroup>
         </SidebarContent>
+        <SidebarSeparator/>
         <SidebarFooter>
             <SidebarMenu>
                 <SidebarMenuItem>
@@ -83,7 +118,7 @@ const AppSidebar = () => {
                                  <ChevronUp className="ml-auto"/>
                             </SidebarMenuButton>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
+                        <DropdownMenuContent align="end"  sideOffset={13}>
                             <DropdownMenuItem>
                                 <User2/>
                                 Account
