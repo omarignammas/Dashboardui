@@ -31,7 +31,7 @@ const chartConfig = {
     return (
         <div className="">
             <h1 className="mb-4 font-medium">Monthly Survey</h1>
-            <ChartContainer config={chartConfig} className="min-h-[150px] w-full">
+            <ChartContainer config={chartConfig} className="min-h-[400px] w-full">
                 <BarChart accessibilityLayer data={chartData}>
                 <CartesianGrid vertical={false} />
                 <XAxis
