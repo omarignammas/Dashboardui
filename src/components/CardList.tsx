@@ -5,7 +5,6 @@ import { Card, CardContent, CardFooter, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { ScrollArea } from "./ui/scroll-area";
 
-  
   const Users = [
     {
       id: 1,
@@ -43,19 +42,20 @@ import { ScrollArea } from "./ui/scroll-area";
   ];
 
 
-
 const CardList = ({title}:{title:string}) => {
     const list = Users ;
 
     return (
         <div className="m-2">
             <h1 className="text-lg font-medium mt-3 ml-3 mb-6">{title}</h1>
-            <ScrollArea className="h-100 p-2  w-[100%] rounded-md border">
+            <ScrollArea className="h-100 p-2  w-[100%] rounded-md overflow-y-auto ">
             <div className="flex flex-col gap-2">
                 
                 {list.map( item => (
 
-                    <Card key={item.id} className="flex-row gap-1 items-center justify-center ml-2 mr-2">
+
+                    <Card key={item.id} className="flex-row gap-1 items-center justify-center ml-1 mr-1">
+                        
                         <div className="h-12 w-12 ml-4 rounded-sm relative overflow-hidden">
                             <Image src={item.image} alt={item.title} fill className="object-cover"/>
                         </div>
@@ -66,6 +66,7 @@ const CardList = ({title}:{title:string}) => {
                         </CardContent>
                         <CardFooter>{item.count / 100}%</CardFooter>
                     </Card>
+          
 
 
                 ))}
@@ -73,13 +74,7 @@ const CardList = ({title}:{title:string}) => {
             </div>
             </ScrollArea>
 
-            
-
-
         </div>
-
-
-    
     )
 }
 
