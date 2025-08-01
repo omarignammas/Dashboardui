@@ -43,14 +43,14 @@ const TodoList = () => {
                             />
                     </PopoverContent>
              </Popover>
-        <ScrollArea className="max-h-[400px] mt-4 overflow-y-auto">
+        <ScrollArea className="max-h-[350px] mt-4 p-2 overflow-y-auto">
            
 
             <div className="flex flex-col gap-4">
 
                 <Card className="p-4">
                     <div className="flex items-center gap-4">
-                        <Checkbox id="item1"  />
+                        <Checkbox id="item1" checked />
                         <label htmlFor="item1" className="text-sm text-muted-foreground">
                               Exercise or do physical activity 15+ mins
                         </label>
