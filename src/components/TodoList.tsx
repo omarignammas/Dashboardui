@@ -24,7 +24,7 @@ const TodoList = () => {
             <h1 className="font-medium mb-5">Habits TodoList</h1>
               <Popover open={open} onOpenChange={setOpen}>
                     <PopoverTrigger asChild>
-                        <Button className="w-[100%]">
+                        <Button className="w-[95%]">
                             <CalendarIcon/>
                              {date ? format(date , "PPP") : <span>Pick a Date</span>}
                         </Button>
