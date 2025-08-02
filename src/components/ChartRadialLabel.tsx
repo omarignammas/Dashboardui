@@ -58,7 +58,7 @@ function ChartRadialLabel() {
   return (
     <Card className="flex flex-col">
       <CardHeader className="items-center pb-0">
-        <CardTitle>Muslim Habits Progression</CardTitle>
+        <CardTitle>Routine Habits Progression</CardTitle>
         <CardDescription>January - June 2025</CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">

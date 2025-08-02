@@ -24,7 +24,7 @@ export default function Home() {
         <TodoList />
       </div>
       <div className="bg-primary-foreground p-4 rounded-lg col-span-1 md:col-span-1 2xl:col-span-3">
-        <CardList title="Users Progression" />
+        <CardList title="Top Users" />
       </div>
       
     </div>

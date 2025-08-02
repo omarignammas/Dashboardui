@@ -48,7 +48,7 @@ const AppSidebar = () => {
                         <SidebarMenuButton asChild>
                             <Link href="/">
                             <Image src={logo} alt="logo" width={50}  height={40} />
-                            <span className="-ml-2">Multazim Dash</span>
+                            <span className="-ml-2">Faundy Dash</span>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>

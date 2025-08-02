@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Progress } from "@/components/ui/progress";
 import { Sheet, SheetTrigger } from "@/components/ui/sheet";import 
-{ BadgeCheck, Candy, Citrus, Shield } from "lucide-react";
+{ BadgeCheck, Candy, Citrus, FileCheck, Shield } from "lucide-react";
 
 
 const SingleUserPage = () => {
@@ -144,7 +144,7 @@ const SingleUserPage = () => {
 
 
             <div className="bg-primary-foreground p-4 rounded-lg">
-                <CardList title="User Progression"/>
+                <CardList title="Top Users"/>
 
             </div>
                 

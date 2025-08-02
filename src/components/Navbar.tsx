@@ -8,13 +8,15 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { SidebarTrigger } from "./ui/sidebar";
 
+
 const Navbar = () => {
 
     const { theme, setTheme } = useTheme()
 
+
     return(
-        <nav className="flex items-center justify-between py-4 mr-8">
-            <SidebarTrigger className="ml-2"/>
+        <nav className="flex items-center justify-between p-4 sticky w-[100%] top-0 bg-background z-10">
+            <SidebarTrigger/>
 
             <div className="flex items-center gap-4">
                <Link href="/">Dashboard</Link> 
