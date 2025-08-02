@@ -1,5 +1,7 @@
+import AppLineChart from "@/components/AppLineChart";
 import CardList from "@/components/CardList";
 import EditUser from "@/components/EditUser";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
@@ -148,11 +150,21 @@ const SingleUserPage = () => {
                 
             </div>   
 
-            <div className="w-full xl:w-2/3 space-y-6">
+            <div className="w-full xl:w-2/3 space-y-8">
 
-            <div className="bg-primary-foreground p-4 rounded-lg">User Card</div>
+            <div className="bg-primary-foreground p-4 space-y-4 rounded-lg">
+                <div className="flex items-center gap-3">
+                    <Avatar>
+                        <AvatarImage src="https://github.com/shadcn.png" alt="profile image"/>
+                        <AvatarFallback>Igna.</AvatarFallback>
+                    </Avatar>
+                    <h1>Omar Ignammas</h1>
+                </div>
+                <p className="text-sm text-muted-foreground">Former engineering student and activist, passionate about software development and smart technologies.</p>
 
-            <div className="bg-primary-foreground p-4 rounded-lg">Chart</div>
+            </div>
+
+            <div className="bg-primary-foreground p-4 rounded-lg"><AppLineChart/></div>
             
             
             </div> 
