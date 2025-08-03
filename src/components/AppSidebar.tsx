@@ -2,7 +2,8 @@ import { Calendar, ChevronDown, ChevronUp, Home, Inbox, LogOut, Plus, PlusCircle
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSubItem, SidebarSeparator } from "./ui/sidebar";
 import Link from "next/link";
 import Image from "next/image";
-import logo from '../assets/logo.png'
+import FaundyDark from '../assets/FaundyDark.png';
+import Faundy from '../assets/Faundy.png'
 import { DropdownMenu, DropdownMenuContent } from "@radix-ui/react-dropdown-menu";
 import { DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./ui/collapsible";
@@ -47,8 +48,10 @@ const AppSidebar = () => {
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
                             <Link href="/">
-                            <Image src={logo} alt="logo" width={50}  height={40} />
-                            <span className="-ml-2">Faundy Dash</span>
+                            <Image src={Faundy} alt="logo" width={50} className="hidden dark:block object-contain" height={50} />
+                            <Image src={FaundyDark} alt="logo" width={50} className="block dark:hidden object-contain" height={50} />
+
+                            <span className="-ml-4 text-md font-bold">Faundy Dash</span>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
@@ -109,7 +112,7 @@ const AppSidebar = () => {
           <SidebarGroupLabel asChild>
 
           <CollapsibleTrigger>
-             Colapsable Groupe
+             Program routines
             <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
           </CollapsibleTrigger>
 
@@ -124,7 +127,7 @@ const AppSidebar = () => {
 
                                 <Link href="/">
                                     <Projector/>
-                                    See All Projects
+                                    See All Routines
                                 </Link>
 
                             </SidebarMenuButton>
@@ -135,7 +138,7 @@ const AppSidebar = () => {
 
                                 <Link href="/">
                                     <PlusCircle/>
-                                    Add Project
+                                    Add Routine
                                 </Link>
 
                             </SidebarMenuButton>
