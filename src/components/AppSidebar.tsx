@@ -32,7 +32,7 @@ const items = [
     },
     {
       title: "Settings",
-      url: "#",
+      url: "/users/test",
       icon: Settings,
     },
   ]
@@ -165,10 +165,12 @@ const AppSidebar = () => {
                             </SidebarMenuButton>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end"  sideOffset={13}>
-                            <DropdownMenuItem>
+                        
+                            <DropdownMenuItem> 
                                 <User2/>
-                                Account
+                                Account 
                             </DropdownMenuItem>
+                        
                             <DropdownMenuItem>
                                 <Settings2/>
                                 Settings

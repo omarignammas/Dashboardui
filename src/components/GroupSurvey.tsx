@@ -115,7 +115,7 @@ export default function GroupSurveyForm() {
                                 onChange={(e) =>
                                     handleHabitChange(index, "habitId", e.target.value)
                                 }
-                                className="border px-2 py-1 rounded-md"
+                                className="border px-2 py-2 rounded-md"
                                 >
                                 <option value="">Select a habit</option>
                                 {Habits.map((h) => (
