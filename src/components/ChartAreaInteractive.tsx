@@ -25,6 +25,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { Button } from "./ui/button"
+import { Sheet, SheetTrigger } from "./ui/sheet"
+import EditUser from "./EditUser"
+import GroupSurvey from "./GroupSurvey"
+import { CalendarIcon } from "lucide-react"
+import { useState } from "react"
+import { format } from "date-fns"
+import { Dialog, DialogTrigger } from "./ui/dialog"
 
 export const description = "An interactive area chart"
 
@@ -138,6 +146,7 @@ const chartConfig = {
 
 function ChartAreaInteractive() {
   const [timeRange, setTimeRange] = React.useState("90d")
+  const [date , setDate] = useState<Date | undefined>(new Date());
 
   const filteredData = chartData.filter((item) => {
     const date = new Date(item.date)
@@ -156,12 +165,24 @@ function ChartAreaInteractive() {
   return (
     <Card className="pt-0">
       <CardHeader className="flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row">
+        
         <div className="grid flex-1 gap-1">
+        
           <CardTitle>Habits Tracking - Progression</CardTitle>
           <CardDescription>
             Showing Progress for the last 3 months
           </CardDescription>
         </div>
+        <Dialog>
+            <DialogTrigger asChild>
+                <Button className="text-sm font-semibold">
+                <CalendarIcon/>
+                <h1>Group Survey - </h1>
+                {date ? format(date , "PPP") : <span>Pick a Date</span>}
+                </Button>
+            </DialogTrigger>
+            <GroupSurvey/>
+        </Dialog>
         <Select value={timeRange} onValueChange={setTimeRange}>
           <SelectTrigger
             className="hidden w-[160px] rounded-lg sm:ml-auto sm:flex"
@@ -181,6 +202,7 @@ function ChartAreaInteractive() {
             </SelectItem>
           </SelectContent>
         </Select>
+        
       </CardHeader>
       <CardContent className="px-2 pt-4 sm:px-6 sm:pt-6">
         <ChartContainer
