@@ -95,7 +95,7 @@ export default function GroupSurveyForm() {
 
   return (
     <DialogContent>
-        <DialogTitle className="mt-5 ml-2">Group Survey Sheet</DialogTitle>
+        <DialogTitle>Group Survey Sheet</DialogTitle>
         <DialogHeader>
         <DialogDescription asChild>
 

@@ -1,4 +1,4 @@
-import { Calendar, ChevronDown, ChevronUp, Home, Inbox, LogOut, Plus, PlusCircle, Projector, Search, Settings, Settings2, User2 } from "lucide-react"
+import { Calendar, ChevronDown, ChevronUp, Home, Inbox, LogOut, Plus, PlusCircle, Projector, Search, Settings, Settings2, User2 ,BotIcon} from "lucide-react"
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSubItem, SidebarSeparator } from "./ui/sidebar";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,8 +12,13 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./ui/collap
 const items = [
     {
       title: "Home",
-      url: "#",
+      url: "/",
       icon: Home,
+    },
+    {
+      title: "AI Plan",
+      url: "/aiplan",
+      icon: BotIcon,
     },
     {
       title: "Inbox",
@@ -48,10 +53,10 @@ const AppSidebar = () => {
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
                             <Link href="/">
-                            <Image src={Faundy} alt="logo" width={50} className="hidden dark:block object-contain" height={50} />
-                            <Image src={FaundyDark} alt="logo" width={50} className="block dark:hidden object-contain" height={50} />
+                            <Image src={Faundy} alt="logo" width={60} className="hidden dark:block object-contain" height={60} />
+                            <Image src={FaundyDark} alt="logo" width={60} className="block dark:hidden object-contain" height={60} />
 
-                            <span className="-ml-4 text-md font-bold">Faundy Dash</span>
+                            <span className="-ml-4 text-lg font-bold">Faundy Dash</span>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
