@@ -28,7 +28,7 @@ import {
         {/* Main content */}
         <div className="flex-1 flex items-center mb-[25%] justify-center">
           <div className="w-full xl:w-2/3 space-y-8 text-center px-4">
-            <h1 className="text-4xl  md:text-6xl font-semibold">
+            <h1 className="text-4xl md:text-6xl font-semibold">
               Find Your Way To Finish
             </h1>
   
