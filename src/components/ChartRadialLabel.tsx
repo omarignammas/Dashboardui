@@ -21,11 +21,11 @@ import {
 export const description = "A radial chart with a label"
 
 const chartData = [
-  { browser: "Quran", Habits: 75, fill: "var(--color-chrome)" },
-  { browser: "Fajr Pray", Habits: 20, fill: "var(--color-safari)" },
-  { browser: "Adhkar", Habits: 80, fill: "var(--color-firefox)" },
-  { browser: "Tahajjud", Habits: 50, fill: "var(--color-edge)" },
-  { browser: "Chokr", Habits: 90, fill: "var(--color-other)" },
+  { browser: "Sports", Habits: 75, fill: "var(--color-chrome)" },
+  { browser: "Reading", Habits: 20, fill: "var(--color-safari)" },
+  { browser: "Family", Habits: 80, fill: "var(--color-firefox)" },
+  { browser: "Business", Habits: 50, fill: "var(--color-edge)" },
+  { browser: "Studies", Habits: 90, fill: "var(--color-other)" },
 ]
 
 const chartConfig = {
