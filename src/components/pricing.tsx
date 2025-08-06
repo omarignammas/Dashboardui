@@ -9,7 +9,7 @@ export default function Pricing() {
             <div className="mx-auto max-w-6xl px-6">
                 <div className="mx-auto max-w-2xl space-y-6 text-center">
                     <h1 className="text-center text-4xl font-semibold lg:text-5xl">Pricing that Scales with You</h1>
-                    <p>Gemini is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</p>
+                    <p>Faundy is evolving to be more than just habits. It powers entire tools and systems helping individuals and teams grow intelligently.</p>
                 </div>
 
                 <div className="mt-8 grid gap-6 md:mt-20 md:grid-cols-3">
@@ -24,7 +24,7 @@ export default function Pricing() {
                             <hr className="border-dashed" />
 
                             <ul className="list-outside space-y-3 text-sm">
-                                {['Basic Analytics Dashboard', '5GB Cloud Storage', 'Email and Chat Support'].map((item, index) => (
+                                {['Basic Analytics Dashboard', 'Track up to 5 habits', 'Basic AI suggestions'].map((item, index) => (
                                     <li
                                         key={index}
                                         className="flex items-center gap-2">
@@ -58,7 +58,7 @@ export default function Pricing() {
                             <CardContent className="space-y-4">
                                 <hr className="border-dashed" />
                                 <ul className="list-outside space-y-3 text-sm">
-                                    {['Everything in Free Plan', '5GB Cloud Storage', 'Email and Chat Support', 'Access to Community Forum', 'Single User Access', 'Access to Basic Templates', 'Mobile App Access', '1 Custom Report Per Month', 'Monthly Product Updates', 'Standard Security Features'].map((item, index) => (
+                                    {['Everything in Free Plan', 'Unlimited habits & goals', 'AI path recommendations', 'Single User Access', 'One Support Team Meeting weekly ', '1 Custom Report Per Month', 'Monthly Product Updates', 'Personnlized Notifications Advices'].map((item, index) => (
                                         <li
                                             key={index}
                                             className="flex items-center gap-2">
@@ -72,7 +72,7 @@ export default function Pricing() {
                             <CardFooter>
                                 <Button
                                     asChild
-                                    className="w-full">
+                                    className="w-full mt-4">
                                     <Link href="">Get Started</Link>
                                 </Button>
                             </CardFooter>
@@ -90,7 +90,7 @@ export default function Pricing() {
                             <hr className="border-dashed" />
 
                             <ul className="list-outside space-y-3 text-sm">
-                                {['Everything in Pro Plan', '5GB Cloud Storage', 'Email and Chat Support'].map((item, index) => (
+                                {['Everything in Pro Plan', '2 Team support meeting weekly', 'Email and Chat Support'].map((item, index) => (
                                     <li
                                         key={index}
                                         className="flex items-center gap-2">
