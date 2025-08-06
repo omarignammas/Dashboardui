@@ -9,7 +9,7 @@ export default function ContentSection() {
                 <div className="relative">
                     <div className="relative z-10 space-y-4 md:w-1/2">
                         <p className="text-body">
-                            Lyra is evolving to be more than just the models. <span className="text-title font-medium">It supports an entire ecosystem</span> — from products innovate.
+                           Faundy is more than just a productivity app. <span className="text-title font-medium">it’s an interactive experience that helps individuals</span> — empowers real growth.
                         </p>
                         <p>It supports an entire ecosystem — from products to the APIs and platforms helping developers and businesses innovate</p>
 
