@@ -12,27 +12,27 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./ui/collap
 const items = [
     {
       title: "Home",
-      url: "/",
+      url: "/dashboard",
       icon: Home,
     },
     {
       title: "AI Plan",
-      url: "/aiplan",
+      url: "/dashboard/aiplan",
       icon: BotIcon,
     },
     {
       title: "Inbox",
-      url: "#",
+      url: "/dashboard/#",
       icon: Inbox,
     },
     {
       title: "Calendar",
-      url: "/calendar",
+      url: "/dashboard/calendar",
       icon: Calendar,
     },
     {
       title: "Settings",
-      url: "/users/test",
+      url: "/dashboard/users/test",
       icon: Settings,
     },
   ]

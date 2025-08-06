@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css"
+import AppSidebar from "@/components/AppSidebar";
+import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/provider/ThemeProvider";
-
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { cookies } from "next/headers";
 
 
@@ -65,12 +66,22 @@ export default async function RootLayout({
         disableTransitionOnChange
         >
 
+       <SidebarProvider defaultOpen={defaultOpen}>
+        
+        <AppSidebar/>
+        
+        <main className="w-full">
+         <Navbar/>
 
-         {children}
+         <div className="px-4">{children}</div>
 
+        </main>
 
-      </ThemeProvider>
+        </SidebarProvider>
+
+        </ThemeProvider>
        
+      
       </body>
     </html>
   );
