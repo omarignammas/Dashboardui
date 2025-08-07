@@ -95,11 +95,12 @@ const presetVariants: Record<PresetType, Variants> = {
   },
 };
 
-const addDefaultVariants = (variants: Variants = {}) => {
+const addDefaultVariants = (variants: Partial<Variants> = {}) => {
   const hidden = { ...defaultItemVariants.hidden, ...(variants.hidden ?? {}) };
   const visible = { ...defaultItemVariants.visible, ...(variants.visible ?? {}) };
   return { hidden, visible };
 };
+
 
 
 function AnimatedGroup({
@@ -112,8 +113,8 @@ function AnimatedGroup({
 }: AnimatedGroupProps) {
   const selectedVariants = {
     item: addDefaultVariants(preset ? presetVariants[preset] : {}),
-    container: addDefaultVariants(defaultContainerVariants as any),
-  };
+    container: addDefaultVariants(defaultContainerVariants), 
+  };  
   const containerVariants = variants?.container || selectedVariants.container;
   const itemVariants = variants?.item || selectedVariants.item;
 
