@@ -94,7 +94,7 @@ const AiPage = () => {
         </Breadcrumb>
       </div>
 
-      <div className="flex-1 flex items-center justify-center mb-[10%]">
+      <div className="flex-1 flex items-center justify-center mb-[30%]">
         <div className="w-full xl:w-2/3 space-y-8 text-center px-4">
           <h1 className="text-4xl md:text-6xl font-semibold">
             Find Your Way To Finish
@@ -117,7 +117,7 @@ const AiPage = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
             />
-            <Button onClick={askAI} className="animate-spin" disabled={loading}>
+            <Button onClick={askAI} disabled={loading}>
               {loading ? "Thinking..." : "Ask AiPlan"}
             </Button>
           </div>

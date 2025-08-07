@@ -80,6 +80,13 @@ export default function FooterSection() {
                                     placeholder="Your email"
                                     className="h-8 text-sm"
                                 />
+                                <Input
+                                    type="text"
+                                    id="text"
+                                    name="text"
+                                    placeholder="Your message"
+                                    className="h-8 text-sm"
+                                />
                                 <Button size="sm">Submit</Button>
                             </div>
                             <span className="text-muted-foreground block text-sm">Don't miss any update!</span>

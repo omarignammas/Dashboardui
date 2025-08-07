@@ -22,9 +22,9 @@ const formSchema = z.object({
       username: z.string().min(2, {
       message: "Username must be at least 2 characters.",
     }),
-    email: z.email({
-        message: "email not correct.",
-      }),
+    email: z.string().email({
+         message: "email not correct." 
+        }),
     phone: z.string().max(15).min(10, {
         message: "Username must be max 15 characters.",
       }),
