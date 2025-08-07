@@ -1,3 +1,4 @@
+"use client"
 import { Calendar, ChevronDown, ChevronUp, Home, Inbox, LogOut, Plus, PlusCircle, Projector, Search, Settings, Settings2, User2 ,BotIcon} from "lucide-react"
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSubItem, SidebarSeparator } from "./ui/sidebar";
 import Link from "next/link";

@@ -1,3 +1,5 @@
+"use client"
+
 import { Cpu, Zap } from 'lucide-react'
 import Image from 'next/image'
 

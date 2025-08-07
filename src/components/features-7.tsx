@@ -1,3 +1,5 @@
+"use client"
+
 import { Cpu, Lock, Sparkles, Zap } from 'lucide-react'
 import Image from 'next/image'
 
