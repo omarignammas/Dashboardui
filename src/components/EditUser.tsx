@@ -138,24 +138,20 @@ const EditUser = () => {
                                 render={({ field }) => (
                                     <FormItem>
                                     <FormLabel>Role</FormLabel>
-                                    <FormControl>
-                                    <Select>
+                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <SelectTrigger className="w-[180px]">
-                                            <SelectValue placeholder="Role" />
+                                        <SelectValue placeholder="Role" />
                                         </SelectTrigger>
                                         <SelectContent>
-                                            <SelectItem value="admin">admin</SelectItem>
-                                            <SelectItem value="user">user</SelectItem>
+                                        <SelectItem value="admin">admin</SelectItem>
+                                        <SelectItem value="user">user</SelectItem>
                                         </SelectContent>
                                     </Select>
-                                    </FormControl>
-                                    <FormDescription>
-                                        This is your role.
-                                    </FormDescription>
                                     <FormMessage />
                                     </FormItem>
                                 )}
                                 />
+
                             </form>
                             <Button type="submit">Save changes</Button>
                         </Form>
