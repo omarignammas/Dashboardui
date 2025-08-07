@@ -16,7 +16,7 @@ const items = [
       icon: Home,
     },
     {
-      title: "AI Plan",
+      title: "FaundAi",
       url: "/dashboard/aiplan",
       icon: BotIcon,
     },

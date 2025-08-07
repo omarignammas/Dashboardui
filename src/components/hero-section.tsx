@@ -110,7 +110,7 @@ export default function HeroSection() {
                                     speedSegment={0.3}
                                     as="h1"
                                     className="mt-8 text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem]">
-                                    Build Better Habits With Smart Guidance
+                                    Build Better Paths With Smart Guidance
                                 </TextEffect>
                                 <TextEffect
                                     per="line"
