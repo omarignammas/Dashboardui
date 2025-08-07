@@ -19,10 +19,17 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json({ result });
-  } catch (err: any) {
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      return NextResponse.json(
+        { error: err.message },
+        { status: 500 }
+      );
+    }
+  
     return NextResponse.json(
-      { error: err?.message || "Something went wrong." },
+      { error: "Something went wrong." },
       { status: 500 }
     );
   }
-}
+}  
