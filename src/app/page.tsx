@@ -1,11 +1,22 @@
+"use client"
 
-import Index from "./index/page";
+import HeroSection from "@/components/hero-section";
+import ContentSection from "@/components/content-2";
+import Pricing from "@/components/pricing";
+import FooterSection from "@/components/footer";
+import FeaturesSection from "@/components/features-7";
 
 export default function Home() {
   return (
 
-      <Index/>
+    <div>
+    <HeroSection/>
+    <ContentSection/>
+    <FeaturesSection/>
+    <Pricing/>
+    <FooterSection/>
+    </div>
+ 
       
-
   );
 }

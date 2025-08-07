@@ -1,4 +1,5 @@
 "use client"
+
 import FaundyDark from '../assets/FaundyDark.png';
 import Faundy from '../assets/Faundy.png'
 import { Button } from '@/components/ui/button'
