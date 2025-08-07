@@ -1,7 +1,7 @@
 import SignUpPage from "@/components/sign-up";
 
 
-export default function Index() {
+export default function Indexsignup() {
   return (
    
      
