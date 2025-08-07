@@ -95,10 +95,12 @@ const presetVariants: Record<PresetType, Variants> = {
   },
 };
 
-const addDefaultVariants = (variants: Variants) => ({
-  hidden: { ...defaultItemVariants.hidden, ...((variants.hidden as any) || {}) },
-  visible: { ...defaultItemVariants.visible, ...((variants.visible as any) || {}) },
-});
+const addDefaultVariants = (variants: Variants = {}) => {
+  const hidden = { ...defaultItemVariants.hidden, ...(variants.hidden ?? {}) };
+  const visible = { ...defaultItemVariants.visible, ...(variants.visible ?? {}) };
+  return { hidden, visible };
+};
+
 
 function AnimatedGroup({
   children,
