@@ -68,7 +68,7 @@ export default function FooterSection() {
             <Link
                 href="/"
                 aria-label="go home"
-                className="mx-auto flex mb-4 items-center w-fit">
+                className="mx-auto flex mb-8 items-center w-fit">
                 {/* Dark mode logo */}
                 <Image
                     src={Faundy}
@@ -95,27 +95,33 @@ export default function FooterSection() {
                         <div className="space-y-4">
                             <Label
                                 htmlFor="mail"
-                                className="block font-medium">
+                                className="block ml-[30%] font-medium">
                                 Newsletter
                             </Label>
-                            <div className="flex gap-2">
+                            <div className="flex justify-center items-center flex-col gap-4">
+                                <Input
+                                    type="text"
+                                    name="user_name" 
+                                    placeholder="Enter your Name"
+                                    className="h-8 w-100 text-sm"
+                                    />
                                 <Input
                                     type="email"
                                     id="mail"
-                                    name="mail"
+                                    name="user_email"
                                     placeholder="Your email"
-                                    className="h-8 text-sm"
+                                    className="h-8  w-100 text-sm"
                                 />
                                 <Input
                                     type="text"
                                     id="text"
-                                    name="text"
+                                    name="message" 
                                     placeholder="Your message"
-                                    className="h-8 text-sm"
+                                    className="h-8  w-100 text-sm"
                                 />
-                                <Button size="sm" type="submit" value="Send">Submit</Button>
+                                <Button size="sm" type="submit" value="Send" className='h-8  w-100 text-sm'>Submit</Button>
                             </div>
-                            <span className="text-muted-foreground block text-sm">Don&apos;t miss any update!</span>
+                            <span className="text-muted-foreground block ml-[30%] text-sm">Don&apos;t miss any update!</span>
                         </div>
                     </form>
 
