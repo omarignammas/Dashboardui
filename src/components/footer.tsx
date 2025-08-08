@@ -92,7 +92,6 @@ export default function FooterSection() {
 
                 
                 <form className="border-b pb-8 text-sm" ref={form} onSubmit={sendEmail}>
-                <form className="border-b pb-8 text-sm" ref={form} onSubmit={sendEmail}>
                         <div className="space-y-4">
                             <Label
                                 htmlFor="mail"
@@ -114,7 +113,6 @@ export default function FooterSection() {
                                     placeholder="Your message"
                                     className="h-8 text-sm"
                                 />
-                                <Button size="sm" type="submit" value="Send">Submit</Button>
                                 <Button size="sm" type="submit" value="Send">Submit</Button>
                             </div>
                             <span className="text-muted-foreground block text-sm">Don&apos;t miss any update!</span>
