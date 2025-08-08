@@ -6,6 +6,8 @@ import { Label } from './ui/label'
 import Image from 'next/image'
 import FaundyDark from '../assets/FaundyDark.png';
 import Faundy from '../assets/Faundy.png'
+import emailjs from '@emailjs/browser';
+import { useRef,FormEvent } from 'react'
 
 const links = [
     {
@@ -35,6 +37,30 @@ const links = [
 ]
 
 export default function FooterSection() {
+
+    const form = useRef<HTMLFormElement>(null)
+
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    if (!form.current) return // safety check
+
+    emailjs
+      .sendForm(
+        'service_35ip1n8',
+        'template_9phl1ci',
+        form.current,
+        { publicKey: 'AmMaHgQLxq3JZIxdu' }
+      )
+      .then(
+        () => console.log('SUCCESS!'),
+        (error) => console.error('FAILED...', error.text)
+      )
+
+    e.currentTarget.reset()
+  }
+
+
     return (
         <footer className="py-16 md:py-32">
             <div className="mx-auto  max-w-5xl px-6">
@@ -65,7 +91,7 @@ export default function FooterSection() {
             </Link>
 
                 
-                <form className=" border-b pb-8 text-sm ">
+                <form className="border-b pb-8 text-sm" ref={form} onSubmit={sendEmail}>
                         <div className="space-y-4">
                             <Label
                                 htmlFor="mail"
@@ -87,7 +113,7 @@ export default function FooterSection() {
                                     placeholder="Your message"
                                     className="h-8 text-sm"
                                 />
-                                <Button size="sm">Submit</Button>
+                                <Button size="sm" type="submit" value="Send">Submit</Button>
                             </div>
                             <span className="text-muted-foreground block text-sm">Don&apos;t miss any update!</span>
                         </div>
