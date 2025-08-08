@@ -6,7 +6,6 @@ import { Label } from './ui/label'
 import Image from 'next/image'
 import FaundyDark from '../assets/FaundyDark.png';
 import Faundy from '../assets/Faundy.png'
-import emailjs from '@emailjs/browser';
 import { useRef,FormEvent } from 'react'
 
 const links = [
@@ -38,28 +37,7 @@ const links = [
 
 export default function FooterSection() {
 
-    const form = useRef<HTMLFormElement>(null)
-
-  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-    if (!form.current) return // safety check
-
-    emailjs
-      .sendForm(
-        'service_35ip1n8',
-        'template_9phl1ci',
-        form.current,
-        { publicKey: 'AmMaHgQLxq3JZIxdu' }
-      )
-      .then(
-        () => console.log('SUCCESS!'),
-        (error) => console.error('FAILED...', error.text)
-      )
-
-    e.currentTarget.reset()
-  }
-
+    
 
     return (
         <footer className="py-16 md:py-32">
