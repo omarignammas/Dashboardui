@@ -8,6 +8,8 @@ import Faundy from '../assets/Faundy.png'
 import { DropdownMenu, DropdownMenuContent } from "@radix-ui/react-dropdown-menu";
 import { DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./ui/collapsible";
+import { useRouter } from "next/navigation";
+import { authClient } from "@/lib/auth-client";
 
 // Menu items.
 const items = [
@@ -42,6 +44,18 @@ const items = [
 
 const AppSidebar = () => {
 
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    await authClient.signOut({
+      fetchOptions: {
+        credentials: "include", // make sure cookies are cleared
+      },
+    });
+  
+    router.push("/"); // redirect after successful logout
+  };
+  
     return(
         <Sidebar collapsible="icon">
             <SidebarHeader>
@@ -176,11 +190,13 @@ const AppSidebar = () => {
                                 <Settings2/>
                                 Settings
                             </DropdownMenuItem>
-                            <DropdownMenuItem variant="destructive">
+                            <DropdownMenuItem variant="destructive" onSelect={handleLogout}>
 
+                         
+                                <LogOut/>
+                                logout
 
-                              <LogOut/>
-                              logout
+                             
                                 
                             </DropdownMenuItem>
                         </DropdownMenuContent>
