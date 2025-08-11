@@ -31,33 +31,7 @@ export default async function RootLayout({
   const defaultOpen = cookieStore.get("sidebar_state")?.value === "true"
  
   return (
-    <html lang="en" suppressHydrationWarning >
-       <head>
-        {/* Light Mode */}
-        <link
-          rel="icon"
-          href="/FaundyDark.svg"
-          type="image/svg+xml"
-          media="(prefers-color-scheme: light)"
-          sizes="any"
-        />
-        {/* Dark Mode */}
-        <link
-          rel="icon"
-          href="/Faundy.svg"
-          type="image/svg+xml"
-          media="(prefers-color-scheme: dark)"
-        />
-        {/* Fallback */}
-        <link
-          rel="icon"
-          href="/Faundy.svg"
-          type="image/svg+xml"
-        />
-      </head> 
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
-      >
+  
         
         <ThemeProvider
         attribute="class"
@@ -82,7 +56,7 @@ export default async function RootLayout({
         </ThemeProvider>
        
       
-      </body>
-    </html>
+ 
+
   );
 }

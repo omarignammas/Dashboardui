@@ -2,16 +2,72 @@
 
 import FaundyDark from '../assets/FaundyDark.png';
 import Faundy from '../assets/Faundy.png'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
 import Image from 'next/image'
 import Link from 'next/link'
+import {  signIn } from '../../server/users';
+import { z } from "zod"
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from "@/components/ui/button"
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { toast } from 'sonner';
+import { useRouter } from 'next/navigation';
+import { authClient } from '@/lib/auth-client';
+ 
+
+const formSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8),
+})
+
 
 export default function LoginPage() {
+
+    const router = useRouter();
+
+    const form = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+          email: "",
+          password: "",
+        },
+      })
+
+      const signInWithGoogle = async () => {
+        await authClient.signIn.social({
+            provider: "google",
+            callbackURL:"/dashboard",
+        })
+
+    }
+     
+      // 2. Define a submit handler.
+      async function onSubmit(values: z.infer<typeof formSchema>) {
+         const { success , message} = await signIn(values.email, values.password);
+
+         if(success){
+
+            toast.success(message as string);
+            router.push('/dashboard');
+
+         }else{
+            toast.error(message as string)
+
+         }
+      }
+
     return (
         <section className="flex min-h-screen bg-zinc-50 w-full px-4 py-16 md:py-32 dark:bg-transparent">
-            <form
+            <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} 
                 action=""
                 className="bg-muted m-auto h-fit w-full max-w-sm overflow-hidden rounded-[calc(var(--radius)+.125rem)] border shadow-md shadow-zinc-950/5 dark:[--color-muted:var(--color-zinc-900)]">
                 <div className="bg-card -m-px rounded-[calc(var(--radius)+.125rem)] border p-8 pb-6">
@@ -30,47 +86,63 @@ export default function LoginPage() {
 
                     <div className="mt-6 space-y-6">
                         <div className="space-y-2">
-                            <Label
-                                htmlFor="email"
-                                className="block text-sm">
-                                Username
-                            </Label>
-                            <Input
-                                type="email"
-                                required
-                                name="email"
-                                id="email"
+                        <FormField
+                            control={form.control}
+                            name="email"
+                            render={({ field }) => (
+                                <FormItem>
+                                <FormLabel>Email</FormLabel>
+                                <FormControl>
+                                    <Input 
+                                    placeholder="Enter your Email" 
+                                    {...field} 
+                                    type='email'/>
+                                </FormControl>
+                                <FormMessage />
+                                </FormItem>
+                            )}
                             />
                         </div>
 
-                        <div className="space-y-0.5">
-                            <div className="flex items-center justify-between">
-                                <Label
-                                    htmlFor="pwd"
-                                    className="text-title text-sm">
+                        <div className="grid gap-3 ">
+                            <div className="flex flex-col gap-2">
+
+                            <FormField
+                            control={form.control}
+                            name="password"
+                            render={({ field }) => (
+                                <FormItem>
+                                <FormLabel>
                                     Password
-                                </Label>
-                                <Button
+                                </FormLabel>
+                                
+                                <FormControl>
+                                    <Input 
+                                    placeholder="Enter your password"
+                                    {...field} 
+                                    type='password'
+                                    />
+                                </FormControl>
+                                <FormMessage />
+                                </FormItem>
+                            )}
+                            />
+                                 <Button
                                     asChild
                                     variant="link"
                                     size="sm">
                                     <Link
                                         href="#"
-                                        className="link intent-info variant-ghost text-sm">
+                                        className="link intent-info variant-ghost text-sm ml-[50%] ">
                                         Forgot your Password ?
                                     </Link>
                                 </Button>
+ 
                             </div>
-                            <Input
-                                type="password"
-                                required
-                                name="pwd"
-                                id="pwd"
-                                className="input sz-md variant-mixed"
-                            />
+                          
                         </div>
 
-                        <Button className="w-full">Sign In</Button>
+                        <Button className="w-full" type='submit'>Sign In</Button>
                     </div>
 
                     <div className="my-6 grid grid-cols-[1fr_auto_1fr] items-center gap-3">
@@ -79,10 +151,12 @@ export default function LoginPage() {
                         <hr className="border-dashed" />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 gap-3">
                         <Button
-                            type="button"
-                            variant="outline">
+                            type="submit"
+                            variant="outline"
+                            onClick={signInWithGoogle}
+                            >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="0.98em"
@@ -103,29 +177,7 @@ export default function LoginPage() {
                             </svg>
                             <span>Google</span>
                         </Button>
-                        <Button
-                            type="button"
-                            variant="outline">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="1em"
-                                height="1em"
-                                viewBox="0 0 256 256">
-                                <path
-                                    fill="#f1511b"
-                                    d="M121.666 121.666H0V0h121.666z"></path>
-                                <path
-                                    fill="#80cc28"
-                                    d="M256 121.666H134.335V0H256z"></path>
-                                <path
-                                    fill="#00adef"
-                                    d="M121.663 256.002H0V134.336h121.663z"></path>
-                                <path
-                                    fill="#fbbc09"
-                                    d="M256 256.002H134.335V134.336H256z"></path>
-                            </svg>
-                            <span>Microsoft</span>
-                        </Button>
+                        
                     </div>
                 </div>
 
@@ -141,6 +193,8 @@ export default function LoginPage() {
                     </p>
                 </div>
             </form>
+            </Form>
         </section>
     )
 }
+
