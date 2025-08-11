@@ -175,9 +175,9 @@ function ChartAreaInteractive() {
         </div>
         <Dialog>
             <DialogTrigger asChild>
-                <Button className="text-sm font-semibold">
+                <Button className="text-sm justify-between font-semibold">
                 <CalendarIcon/>
-                <h1>Group Survey - </h1>
+                <h1 className="sm:block hidden">Group Survey - </h1>
                 {date ? format(date , "PPP") : <span>Pick a Date</span>}
                 </Button>
             </DialogTrigger>

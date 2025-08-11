@@ -177,8 +177,11 @@ const AppSidebar = () => {
                                 Settings
                             </DropdownMenuItem>
                             <DropdownMenuItem variant="destructive">
-                                <LogOut/>
-                                logout
+
+
+                              <LogOut/>
+                              logout
+                                
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
